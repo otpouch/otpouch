@@ -7,6 +7,8 @@
   },
   "scripts": {
     "dev": "vinext dev --port 5173",
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "prebuild": "npm test",
     "build": "vinext build",
     "start": "wrangler dev --config dist/server/wrangler.json --local --persist-to .wrangler/state --ip 127.0.0.1 --inspector-port 0",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",

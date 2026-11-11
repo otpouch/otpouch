@@ -50,7 +50,7 @@ export function LandingPage() {
               <span>放进口袋。</span>
             </h1>
             <p className="hero-description">
-              常用账号的动态验证码，集中管理，随身取用。
+              口袋令牌（OTPouch），随身的 TOTP 双重验证管理工具。
               <br />
               微信小程序现在可用，iOS 与 Android App 正在开发中。
             </p>
@@ -105,12 +105,20 @@ export function LandingPage() {
             <span className="section-kicker">GOOD TO KNOW.</span>
             <h2>你可能还想知道。</h2>
             <p>开始使用前，把这些小事说清楚。</p>
+            <div className="resource-links">
+              <a href="/guide">
+                使用指南 <ArrowUpRight size={13} aria-hidden="true" />
+              </a>
+              <a href="/faq">
+                查看全部问题 <ArrowUpRight size={13} aria-hidden="true" />
+              </a>
+            </div>
           </div>
           <Accordion type="single" collapsible className="faq-list">
             {faqs.map((faq, index) => (
               <AccordionItem value={`faq-${index}`} key={faq.question}>
                 <AccordionTrigger>{faq.question}</AccordionTrigger>
-                <AccordionContent>{faq.answer}</AccordionContent>
+                <AccordionContent forceMount>{faq.answer}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
@@ -146,6 +154,8 @@ export function LandingPage() {
         <span>© {new Date().getFullYear()} 口袋令牌 · otpouch</span>
         <div>
           <span>验证码，放进口袋。</span>
+          <a href="/guide">使用指南</a>
+          <a href="/faq">常见问题</a>
           <a
             className="github-link"
             href={siteConfig.githubUrl}

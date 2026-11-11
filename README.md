@@ -22,6 +22,7 @@ npm run dev
 ```sh
 npm run typecheck
 npm run lint
+npm test
 npm run build
 npm start
 ```
@@ -40,8 +41,11 @@ npm start
 | `public/` | 图片、字体、robots.txt 与 sitemap.xml |
 | `worker/index.ts` | 本地运行和构建所需的通用 Worker 入口 |
 | `docs/design.md` | 设计与内容维护约定 |
+| `docs/seo.md` | SEO、结构化数据与 AI 搜索内容维护 |
 
 生产部署、CI、云账户和发布记录由独立运维项目维护，不包含在本仓库中。本仓库不绑定托管平台项目身份。
+
+官网提供[使用指南](https://otpouch.app/guide)、[常见问题](https://otpouch.app/faq)、[站点地图](https://otpouch.app/sitemap.xml)和可选的[纯文本内容索引](https://otpouch.app/llms.txt)。正文、结构化数据和文本索引使用同源产品说明；维护方式见 [SEO 文档](docs/seo.md)。
 
 ## 修改与贡献
 
