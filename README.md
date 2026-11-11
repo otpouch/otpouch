@@ -45,7 +45,7 @@ npm start
 
 生产部署、CI、云账户和发布记录由独立运维项目维护，不包含在本仓库中。本仓库不绑定托管平台项目身份。
 
-桌面端固定下载入口为 `/download/latest/macos`（Apple 芯片 ZIP）与 `/download/latest/windows`（64 位 EXE）。平台区与获取弹窗共用 `lib/site-config.ts` 中的链接。请求时读取正式 stable 更新清单，再以禁止缓存的临时重定向跳转至该次选中的版本；新 stable 发布后无需修改官网。清单不可用时返回可重试的 503，不回退到旧包。
+桌面端固定下载入口为 `/download/latest/macos`（Apple 芯片 ZIP）与 `/download/latest/windows`（64 位 EXE）。平台区与获取弹窗共用 `lib/site-config.ts` 中的链接。请求时读取正式 stable 更新清单，再以禁止缓存的临时重定向跳转至该次选中的版本；新 stable 发布后无需修改官网。清单请求失败时重试一次，仍不可用则记录错误并返回可重试的 503，不回退到旧包。
 
 官网提供[使用指南](https://otpouch.app/guide)、[常见问题](https://otpouch.app/faq)、[站点地图](https://otpouch.app/sitemap.xml)和可选的[纯文本内容索引](https://otpouch.app/llms.txt)。正文、结构化数据和文本索引使用同源产品说明；维护方式见 [SEO 文档](docs/seo.md)。
 

@@ -21,7 +21,12 @@ export async function GET(
       status: 307,
       headers: { ...headers, Location: location },
     });
-  } catch {
+  } catch (error) {
+    console.error(
+      "Desktop download resolution failed",
+      platform,
+      error instanceof Error ? error.message : "Unknown feed error",
+    );
     return new Response(
       "暂时无法获取最新安装包，请稍后重试。返回官网：https://otpouch.app/#platforms",
       {

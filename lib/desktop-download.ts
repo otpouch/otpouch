@@ -17,12 +17,23 @@ export async function latestDesktopDownload(
   fetchFeed: typeof fetch = fetch,
 ) {
   const { target, feed, extension } = platforms[platform];
-  const response = await fetchFeed(new URL(`${target}/${feed}`, updateBase), {
-    cache: "no-store",
-    signal: AbortSignal.timeout(10000),
-  });
-  if (!response.ok) throw new Error("Desktop update feed is unavailable");
-  const metadata = await response.text();
+  async function readFeed() {
+    const response = await fetchFeed(new URL(`${target}/${feed}`, updateBase), {
+      cache: "no-store",
+      signal: AbortSignal.timeout(10000),
+    });
+    if (!response.ok)
+      throw new Error(`Desktop update feed is unavailable: HTTP ${response.status}`);
+    return response.text();
+  }
+  let metadata: string;
+  try {
+    metadata = await readFeed();
+  } catch {
+    // A transient edge-to-origin timeout must not force users to download an old
+    // release. Retry the live feed once; if it still fails, return a retryable 503.
+    metadata = await readFeed();
+  }
   // The official electron-updater feed uses plain or quoted scalar filenames.
   // Accept only a basename and a release version, never a URL or relative path.
   const filename = metadata.match(

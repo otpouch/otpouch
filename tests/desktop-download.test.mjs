@@ -33,3 +33,25 @@ test("unknown platforms and invalid feeds cannot become a download redirect", as
   await assert.rejects(latestDesktopDownload("macos", async () => new Response("", { status: 503 })));
   await assert.rejects(latestDesktopDownload("windows", async () => { throw new Error("offline"); }));
 });
+
+test("transient origin failures retry the live feed once and permanent failures stop", async () => {
+  for (const firstFailure of [
+    () => { throw new DOMException("timeout", "TimeoutError"); },
+    () => new Response("unavailable", { status: 503 }),
+  ]) {
+    let calls = 0;
+    const location = await latestDesktopDownload("macos", async (_url, options) => {
+      assert.equal(options.cache, "no-store");
+      if (++calls === 1) return firstFailure();
+      return new Response("path: OTPouch-0.4.0-mac-arm64.zip\nversion: 0.4.0\n");
+    });
+    assert.equal(calls, 2);
+    assert.ok(location.endsWith("/versions/0.4.0/darwin-aarch64/OTPouch-0.4.0-mac-arm64.zip"));
+  }
+  let calls = 0;
+  await assert.rejects(latestDesktopDownload("windows", async () => {
+    calls++;
+    throw new Error("offline");
+  }));
+  assert.equal(calls, 2);
+});
