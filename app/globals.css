@@ -170,6 +170,12 @@ input:focus-visible {
 .desktop-nav a:hover {
   color: #1c1c1e;
 }
+.desktop-nav .github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
 .header-actions {
   display: flex;
   align-items: center;
@@ -1275,6 +1281,8 @@ input:focus-visible {
 }
 .site-footer > div {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 26px;
 }
 .site-footer a {

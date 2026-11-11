@@ -18,6 +18,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { faqs } from "@/lib/landing-content";
+import { siteConfig } from "@/lib/site-config";
 import { AppDemo } from "./app-demo";
 import { Header } from "./header";
 import { GetAppDialog } from "./get-app-dialog";
@@ -144,6 +145,15 @@ export function LandingPage() {
         <span>© {new Date().getFullYear()} 口袋令牌 · otpouch</span>
         <div>
           <span>验证码，放进口袋。</span>
+          <a
+            href={siteConfig.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub 开源仓库（新窗口打开）"
+          >
+            GitHub 开源
+            <ArrowUpRight size={12} aria-hidden="true" />
+          </a>
           <a href="https://otpouch.app" aria-label="otpouch.app 官网">
             otpouch.app
             <ArrowUpRight size={12} />

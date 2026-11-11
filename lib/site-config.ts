@@ -3,12 +3,14 @@ export const siteConfig: {
   name: string;
   englishName: string;
   url: string;
+  githubUrl: string;
   miniProgramCode: string | null;
   miniProgramUrl: string | null;
 } = {
   name: "口袋令牌",
   englishName: "otpouch",
   url: "https://otpouch.app",
+  githubUrl: "https://github.com/otpouch/otpouch",
   // Official release code supplied by the owner; preserve the original image.
   miniProgramCode: "/miniprogram-code.jpg",
   // Optional official WeChat URL Link. Leave null until a real link is available.

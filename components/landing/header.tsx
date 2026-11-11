@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { navigation } from "@/lib/landing-content";
+import { siteConfig } from "@/lib/site-config";
 
 function Brand() {
   return (
@@ -35,6 +36,16 @@ export function Header({ onGetApp }: { onGetApp: () => void }) {
               {item.label}
             </a>
           ))}
+          <a
+            className="github-link"
+            href={siteConfig.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub 开源仓库（新窗口打开）"
+          >
+            GitHub 开源
+            <ArrowUpRight size={13} aria-hidden="true" />
+          </a>
         </nav>
         <div className="header-actions">
           <Button className="header-cta" onClick={onGetApp}>
@@ -68,6 +79,16 @@ export function Header({ onGetApp }: { onGetApp: () => void }) {
               <ArrowUpRight size={15} />
             </a>
           ))}
+          <a
+            href={siteConfig.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub 开源仓库（新窗口打开）"
+            onClick={() => setMenuOpen(false)}
+          >
+            GitHub 开源
+            <ArrowUpRight size={15} aria-hidden="true" />
+          </a>
         </nav>
       )}
     </header>
