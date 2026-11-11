@@ -12,6 +12,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { siteConfig } from "@/lib/site-config";
+import { DesktopDownloads } from "./desktop-downloads";
 
 export function GetAppDialog({
   open,
@@ -110,6 +111,14 @@ export function GetAppDialog({
             </a>
           </Button>
         )}
+        <div className="dialog-app-status dialog-desktop-downloads">
+          <div>
+            <strong>macOS / Windows 桌面端</strong>
+            <span className="platform-status">现在可用</span>
+          </div>
+          <p>下载最新稳定版安装包。</p>
+          <DesktopDownloads />
+        </div>
         <div className="dialog-app-status">
           <div>
             <strong>iOS / Android App</strong>

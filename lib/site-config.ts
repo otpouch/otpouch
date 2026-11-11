@@ -6,6 +6,10 @@ export const siteConfig: {
   githubUrl: string;
   miniProgramCode: string | null;
   miniProgramUrl: string | null;
+  desktopDownloads: {
+    macos: string;
+    windows: string;
+  };
 } = {
   name: "口袋令牌",
   englishName: "otpouch",
@@ -15,4 +19,8 @@ export const siteConfig: {
   miniProgramCode: "/miniprogram-code.jpg",
   // Optional official WeChat URL Link. Leave null until a real link is available.
   miniProgramUrl: null,
+  desktopDownloads: {
+    macos: "/download/latest/macos",
+    windows: "/download/latest/windows",
+  },
 };

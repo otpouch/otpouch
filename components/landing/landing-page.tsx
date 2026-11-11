@@ -52,7 +52,7 @@ export function LandingPage() {
             <p className="hero-description">
               口袋令牌（OTPouch），随身的 TOTP 双重验证管理工具。
               <br />
-              微信小程序现在可用，iOS 与 Android App 正在开发中。
+              微信小程序、macOS 与 Windows 桌面端现在可用。
             </p>
             <div className="hero-actions">
               <Button onClick={openApp} className="primary-cta">
@@ -60,7 +60,7 @@ export function LandingPage() {
                 <ArrowUpRight size={18} />
               </Button>
               <a className="secondary-cta" href="#platforms">
-                了解 App
+                下载桌面端
                 <ArrowDown size={15} />
               </a>
             </div>
@@ -68,7 +68,7 @@ export function LandingPage() {
               <span className="tiny-dot" />
               微信小程序 · 现在可用
               <span className="note-divider" />
-              iOS / Android App · 开发中
+              macOS / Windows · 现已上线
             </div>
             <div className="hero-bottom-note">
               <KeyRound size={15} aria-hidden="true" />
@@ -137,7 +137,7 @@ export function LandingPage() {
               <p>
                 少一点翻找，多一点顺手。
                 <br />
-                先从微信小程序开始，App 正在开发中。
+                选择微信小程序，或下载 macOS / Windows 桌面端。
               </p>
               <Button className="primary-cta" onClick={openApp}>
                 使用微信小程序

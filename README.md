@@ -2,7 +2,7 @@
 
 [官网](https://otpouch.app) · [问题反馈](https://github.com/otpouch/otpouch/issues) · [MIT 许可证](LICENSE)
 
-口袋令牌的官方宣传网站。介绍微信小程序、开发中的 iOS / Android App，以及按账号授权的 Agent / MCP 使用方式。
+口袋令牌的官方宣传网站。介绍微信小程序、macOS / Windows 桌面端、开发中的 iOS / Android App，以及按账号授权的 Agent / MCP 使用方式。
 
 本仓库开源官网的页面、交互演示和构建代码。演示使用 `example.com` 账号与合成验证码，不连接真实用户账号、OTP 密钥、业务数据库或 MCP 服务。
 
@@ -44,6 +44,8 @@ npm start
 | `docs/seo.md` | SEO、结构化数据与 AI 搜索内容维护 |
 
 生产部署、CI、云账户和发布记录由独立运维项目维护，不包含在本仓库中。本仓库不绑定托管平台项目身份。
+
+桌面端固定下载入口为 `/download/latest/macos`（Apple 芯片 ZIP）与 `/download/latest/windows`（64 位 EXE）。平台区与获取弹窗共用 `lib/site-config.ts` 中的链接。请求时读取正式 stable 更新清单，再以禁止缓存的临时重定向跳转至该次选中的版本；新 stable 发布后无需修改官网。清单不可用时返回可重试的 503，不回退到旧包。
 
 官网提供[使用指南](https://otpouch.app/guide)、[常见问题](https://otpouch.app/faq)、[站点地图](https://otpouch.app/sitemap.xml)和可选的[纯文本内容索引](https://otpouch.app/llms.txt)。正文、结构化数据和文本索引使用同源产品说明；维护方式见 [SEO 文档](docs/seo.md)。
 

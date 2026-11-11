@@ -3,7 +3,7 @@ export const seoPages = {
   "/": {
     title: "口袋令牌 OTPouch｜TOTP 动态验证码与双重验证管理",
     description:
-      "口袋令牌（OTPouch）是一款 TOTP 动态验证码管理工具。通过微信小程序管理双重验证（2FA）账号，支持扫码添加、搜索复制、JSON 备份和 Agent / MCP 按账号授权。iOS 与 Android App 开发中。",
+      "口袋令牌（OTPouch）是一款 TOTP 动态验证码管理工具。微信小程序、macOS 与 Windows 桌面端现在可用，官网提供最新稳定版下载。支持双重验证（2FA）账号管理、JSON 备份和 Agent / MCP 按账号授权。iOS 与 Android App 开发中。",
     label: "首页",
   },
   "/guide": {
@@ -112,7 +112,7 @@ export function pageSchema(
         alternateName: [site.name, site.englishName],
         url: origin,
         applicationCategory: "SecurityApplication",
-        runtimePlatform: "微信小程序",
+        runtimePlatform: ["微信小程序", "macOS", "Windows"],
         inLanguage: "zh-CN",
         description: page.description,
         featureList: facts.map((fact) => fact.value),

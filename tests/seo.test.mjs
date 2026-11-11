@@ -39,7 +39,7 @@ test("structured data distinguishes the website source from the product and avoi
   const graph = pageSchema(siteConfig, "/", productFacts, faqs)["@graph"];
   const app = graph.find((item) => item["@type"] === "SoftwareApplication");
   const source = graph.find((item) => item["@type"] === "SoftwareSourceCode");
-  assert.equal(app.runtimePlatform, "微信小程序");
+  assert.deepEqual(app.runtimePlatform, ["微信小程序", "macOS", "Windows"]);
   for (const key of [
     "aggregateRating",
     "review",

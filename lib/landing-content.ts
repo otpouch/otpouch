@@ -8,7 +8,7 @@ export const faqs = [
   {
     question: "口袋令牌是什么？",
     answer:
-      "口袋令牌（OTPouch）是一款 TOTP 动态验证码管理工具，用于集中管理支持双重验证（2FA）的账号。现在可以通过微信小程序查看和复制验证码，独立的 iOS 与 Android App 正在开发中。",
+      "口袋令牌（OTPouch）是一款 TOTP 动态验证码管理工具，用于集中管理支持双重验证（2FA）的账号。现在可以通过微信小程序、macOS 与 Windows 桌面端使用，独立的 iOS 与 Android App 正在开发中。",
   },
   {
     question: "TOTP 是什么？哪些账号可以添加？",
@@ -55,6 +55,11 @@ export const faqs = [
     answer:
       "Agent 只能搜索和取用你主动授权的账号验证码。你可以逐个选择账号、设置授权期限，也可以随时撤销。MCP 接口不返回 OTP 密钥；授权凭证仍可用于获取验证码，请只交给你信任的 Agent，并优先选择有限的范围与期限。",
   },
+  {
+    question: "如何下载最新桌面端？",
+    answer:
+      "在官网「使用平台」或「获取口袋令牌」中选择 macOS 或 Windows。下载入口始终读取最新稳定版，无需查找版本号。macOS 支持 Apple 芯片与 macOS 13 及以上，下载 ZIP 后解压并将 OTPouch 拖入应用程序；Windows 提供 64 位 EXE 安装包。iOS 与 Android App 仍在开发中。",
+  },
 ];
 
 export const productFacts = [
@@ -66,7 +71,7 @@ export const productFacts = [
   {
     label: "当前入口",
     value:
-      "微信小程序现在可用；iOS 与 Android 独立 App 正在开发中，尚未开放下载。",
+      "微信小程序现在可用；macOS（Apple 芯片）与 Windows（64 位）桌面端已开放最新稳定版下载；iOS 与 Android 独立 App 正在开发中，尚未开放下载。",
   },
   {
     label: "日常使用",

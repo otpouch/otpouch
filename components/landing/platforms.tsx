@@ -1,5 +1,6 @@
-import { ArrowUpRight, MessageCircle, Smartphone } from "lucide-react";
+import { ArrowUpRight, MessageCircle, Monitor, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { DesktopDownloads } from "./desktop-downloads";
 
 export function Platforms({ onGetMiniapp }: { onGetMiniapp: () => void }) {
   return (
@@ -12,18 +13,31 @@ export function Platforms({ onGetMiniapp }: { onGetMiniapp: () => void }) {
         <div>
           <span className="section-kicker">IN YOUR POCKET.</span>
           <h2 id="platform-heading">
-            在微信里，
+            在手机里，
             <br />
-            也在 App 里。
+            也在电脑里。
           </h2>
         </div>
         <p>
-          小程序轻便即用，独立 App 正在开发。
+          小程序轻便即用，桌面端现已开放下载。
           <br />
           选择适合自己的使用方式。
         </p>
       </div>
       <div className="platform-list">
+        <article className="platform-option">
+          <div className="platform-heading">
+            <h3>
+              <Monitor size={20} aria-hidden="true" />
+              桌面端
+            </h3>
+            <span className="platform-status">现在可用</span>
+          </div>
+          <p>
+            下载最新稳定版。macOS 支持 Apple 芯片，提供 ZIP；Windows 提供 64 位安装包。
+          </p>
+          <DesktopDownloads />
+        </article>
         <article className="platform-option">
           <div className="platform-heading">
             <h3>

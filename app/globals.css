@@ -1411,7 +1411,7 @@ input:focus-visible {
 }
 .platform-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 40px;
   margin-top: 36px;
 }
@@ -1457,6 +1457,15 @@ input:focus-visible {
 .platform-app-button {
   height: 44px;
   font-size: 13px;
+}
+.desktop-downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.dialog-desktop-downloads .desktop-downloads {
+  display: grid;
+  margin-top: 12px;
 }
 .get-app-dialog {
   width: calc(100vw - 32px);
