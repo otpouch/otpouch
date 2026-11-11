@@ -158,6 +158,7 @@ input:focus-visible {
 }
 .desktop-nav {
   display: flex;
+  align-items: center;
   gap: 31px;
   margin-left: 90px;
 }
@@ -170,11 +171,16 @@ input:focus-visible {
 .desktop-nav a:hover {
   color: #1c1c1e;
 }
-.desktop-nav .github-link {
+.github-link {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  white-space: nowrap;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  flex-shrink: 0;
+}
+.github-link svg {
+  flex-shrink: 0;
 }
 .header-actions {
   display: flex;
@@ -1293,6 +1299,9 @@ input:focus-visible {
 .site-footer a:hover {
   color: #1c1c1e;
 }
+.site-footer .github-link {
+  margin-block: -10px;
+}
 .platform-section {
   padding-block: 88px;
 }
@@ -1620,6 +1629,10 @@ input:focus-visible {
     padding: 13px 0;
     font-size: 13px;
     color: #636366;
+  }
+  .mobile-nav .github-link {
+    align-self: flex-start;
+    justify-content: center;
   }
   .hero {
     grid-template-columns: 1fr;

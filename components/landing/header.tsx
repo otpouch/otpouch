@@ -6,6 +6,7 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { navigation } from "@/lib/landing-content";
 import { siteConfig } from "@/lib/site-config";
+import { GitHubIcon } from "./github-icon";
 
 function Brand() {
   return (
@@ -42,9 +43,9 @@ export function Header({ onGetApp }: { onGetApp: () => void }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub 开源仓库（新窗口打开）"
+            title="GitHub 开源仓库"
           >
-            GitHub 开源
-            <ArrowUpRight size={13} aria-hidden="true" />
+            <GitHubIcon />
           </a>
         </nav>
         <div className="header-actions">
@@ -80,14 +81,15 @@ export function Header({ onGetApp }: { onGetApp: () => void }) {
             </a>
           ))}
           <a
+            className="github-link"
             href={siteConfig.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub 开源仓库（新窗口打开）"
+            title="GitHub 开源仓库"
             onClick={() => setMenuOpen(false)}
           >
-            GitHub 开源
-            <ArrowUpRight size={15} aria-hidden="true" />
+            <GitHubIcon />
           </a>
         </nav>
       )}

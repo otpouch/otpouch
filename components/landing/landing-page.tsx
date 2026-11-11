@@ -25,6 +25,7 @@ import { GetAppDialog } from "./get-app-dialog";
 import { Features } from "./features";
 import { AgentSection } from "./agent-section";
 import { Platforms } from "./platforms";
+import { GitHubIcon } from "./github-icon";
 
 export function LandingPage() {
   const [getAppOpen, setGetAppOpen] = useState(false);
@@ -146,13 +147,14 @@ export function LandingPage() {
         <div>
           <span>验证码，放进口袋。</span>
           <a
+            className="github-link"
             href={siteConfig.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub 开源仓库（新窗口打开）"
+            title="GitHub 开源仓库"
           >
-            GitHub 开源
-            <ArrowUpRight size={12} aria-hidden="true" />
+            <GitHubIcon />
           </a>
           <a href="https://otpouch.app" aria-label="otpouch.app 官网">
             otpouch.app
