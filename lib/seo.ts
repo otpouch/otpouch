@@ -18,6 +18,12 @@ export const seoPages = {
       "了解口袋令牌（OTPouch）支持的 TOTP 账号、微信小程序与 App 状态、离线使用条件、JSON 迁移、24 小时回收站、官网开源范围和 Agent / MCP 授权边界。",
     label: "常见问题",
   },
+  "/privacy": {
+    title: "隐私政策：数据处理、账号注销与联系｜口袋令牌 OTPouch",
+    description:
+      "口袋令牌（OTPouch）隐私政策：了解账号与令牌数据、云端存储、本机安全、权限用途、服务商与处理地点、备份、账号注销和隐私联系方式。",
+    label: "隐私政策",
+  },
 } as const;
 
 type Site = {

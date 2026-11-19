@@ -156,6 +156,7 @@ export function LandingPage() {
           <span>验证码，放进口袋。</span>
           <a href="/guide">使用指南</a>
           <a href="/faq">常见问题</a>
+          <a href="/privacy">隐私政策</a>
           <a
             className="github-link"
             href={siteConfig.githubUrl}
